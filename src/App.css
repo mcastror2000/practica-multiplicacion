@@ -1,38 +1,102 @@
-.App {
+/* App.css */
+
+/* -- 1) Configuración básica -- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fefefe;
+}
+
+/* -- 2) Contenedor principal: centrado y con límite de ancho -- */
+.container {
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 600px; /* ancho máximo para pantallas grandes */
+  width: 90%;       /* ocupará el 90% en pantallas pequeñas */
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Estilos básicos de texto */
+h1, h2, p {
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* -- 3) Botones y filas de botones -- */
+.buttons-row {
+  display: flex;
+  gap: 1rem; /* Separación entre botones */
+}
+
+button {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* -- 4) Tarjeta donde mostramos la operación, el input, etc. -- */
+.card {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.operation {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.answer-input {
+  width: 100px;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.4rem;
+}
+
+.message {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.stats {
+  font-style: italic;
+}
+
+/* -- 5) Media Query para pantallas de al menos 768px (tabletas / computadoras) -- */
+@media (min-width: 768px) {
+  .container {
+    margin-top: 2rem;
+    padding: 2rem;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  button {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .operation {
+    font-size: 2rem;
+  }
+  .answer-input {
+    font-size: 1.2rem;
+    width: 120px;
   }
 }
